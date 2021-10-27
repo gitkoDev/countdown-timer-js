@@ -1,0 +1,204 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-family: "Rampart One", cursive;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+
+    padding: 5px;
+    background: linear-gradient(70deg, rgb(53, 50, 50), rgb(240, 185, 83));
+    overflow: hidden;
+}
+
+img,
+button,
+span {
+    display: inline-block;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.app {
+    &__title {
+        font-size: 5rem;
+        margin-bottom: 2rem;
+        margin-top: 1.5rem;
+        text-align: center;
+        line-height: 1;
+    }
+    &__flex {
+        width: 90vw;
+        height: 60vh;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100vw;
+    }
+    &__btns {
+        &-top {
+            margin-bottom: 1rem;
+        }
+    }
+    &__bomb {
+        position: relative;
+    }
+    &__bomb img {
+        max-width: 550px;
+    }
+}
+
+.time {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    left: 31%;
+    & span {
+        font-size: 4.5rem;
+        color: #fff;
+        transform: translateY(-2.5rem);
+    }
+    &__btn {
+        background: transparent;
+        border: 2px solid #333;
+        border-radius: 6px;
+        padding: 1rem 1.5rem;
+        font-family: "Oswald", sans-serif;
+        font-size: 1.5rem;
+        color: #222;
+        transition: background-color 0.2s ease-in-out, color 0.3s ease-in-out;
+        &:hover {
+            color: #ccc;
+            background: #222;
+        }
+    }
+    &__input--minutes,
+    &__input--seconds {
+        &[placeholder] {
+            font-size: 1.5rem;
+        }
+        background: transparent;
+        border: 2px solid #333;
+        border-radius: 6px;
+        padding: 1rem 1.5rem;
+        font-family: "Oswald", sans-serif;
+        font-size: 1.5rem;
+        color: #222;
+        &:focus {
+            color: #ccc;
+            background: #222;
+        }
+    }
+    &__start-btn {
+        background: transparent;
+        border: 2px solid #333;
+        border-radius: 6px;
+        padding: 1rem 1.5rem;
+        font-family: "Oswald", sans-serif;
+        font-size: 1.5rem;
+        color: #222;
+        &:hover {
+            color: #ccc;
+            background: #222;
+        }
+    }
+}
+
+// Keyframes
+
+@keyframes bomb-pulsate {
+    0% {
+        transform: scale(1);
+    }
+    33% {
+        transform: scale(1.2);
+    }
+    66% {
+        transform: scale(1.4);
+    }
+    100% {
+        transform: scale(3);
+    }
+}
+
+// Media queries
+
+@media (max-width: 800px) {
+    html {
+        font-size: 15px;
+    }
+    .app {
+        &__btns-bottom {
+            display: flex;
+            flex-direction: column;
+
+            & input {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .time {
+        top: 54%;
+        left: 31%;
+        & span {
+            font-size: 4rem;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .time {
+        & span {
+            font-size: 3.7rem;
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .time {
+        & span {
+            font-size: 3.3rem;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .app {
+        &__btns-top {
+            display: none;
+        }
+    }
+    html {
+        font-size: 14px;
+    }
+    .time {
+        & span {
+            font-size: 3.1rem;
+        }
+    }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Timer</title>
+        <link rel="stylesheet" href="style/style.css" />
+        <script defer src="script.js"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Rampart+One&display=swap" rel="stylesheet" />
+    </head>
+    <body>
+        <div class="app__flex">
+            <h1 class="app__title">Let's play!</h1>
+            <div class="app__btns-top">
+                <button class="time__btn" id="time__minutes--half">30 seconds</button>
+                <button class="time__btn" id="time__minutes--one">1 minute</button>
+                <button class="time__btn" id="time__minutes--two">2 minutes</button>
+            </div>
+            <div class="app__btns-bottom">
+                <input type="text" placeholder="minutes" class="time__input--minutes" id="time__input--minutes" />
+                <input type="text" placeholder="seconds" class="time__input--seconds" id="time__input--seconds" />
+                <button class="time__start-btn" id="time__start-btn">Start</button>
+            </div>
+
+            <div class="app__inner">
+                <div class="app__bomb" id="app__bomb">
+                    <div class="time">
+                        <span id="time__show"></span>
+                    </div>
+
+                    <img src="./img/bomb-img.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
